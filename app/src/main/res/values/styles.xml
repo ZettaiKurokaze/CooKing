@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="Widget.Theme.CooKing.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
+
+    <style name="Widget.Theme.CooKing.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="Search.QueryHint.Color" parent="">
+        <item name="android:textColorHint">@color/light_grey</item>
+        <item name="android:textCursorDrawable">@drawable/query_cursor</item>
+        <item name="android:textColor">#050908</item>
+    </style>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_ingredient_add.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ic_meta.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2045" />
+        <entry key="app/src/main/res/drawable/ingredient_background.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/ingredient_button.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ingredient_button_default.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ingredient_button_selected.xml" value="0.3565" />
+        <entry key="app/src/main/res/drawable/intro_button_res.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/item_selector.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/login_modal.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/query_cursor.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/round_corner.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/search_background.xml" value="0.2915" />
+        <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.3205" />
+        <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.309765625" />
+        <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.26640625" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.3411458333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.34974358974358977" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.34974358974358977" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_choose.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/ingredient_card.xml" value="0.34974358974358977" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.34974358974358977" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.18229166666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

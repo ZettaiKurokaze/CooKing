@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_choose">
+
+    <fragment
+        android:id="@+id/navigation_choose"
+        android:name="com.rekstudios.cooking.ChooseFragment"
+        android:label="@string/choose_text"
+        tools:layout="@layout/fragment_choose" >
+        <action
+            android:id="@+id/action_navigation_choose_to_navigation_add"
+            app:destination="@id/navigation_add" />
+        <action
+            android:id="@+id/action_navigation_choose_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+        <action
+            android:id="@+id/action_navigation_choose_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_choose_to_navigation_search"
+            app:destination="@id/navigation_search"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.rekstudios.cooking.SearchFragment"
+        android:label="@string/search_text"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_add"
+            app:destination="@id/navigation_add" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_choose"
+            app:destination="@id/navigation_choose"
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right"
+            app:popEnterAnim="@anim/slide_in_from_right"
+            app:popExitAnim="@anim/slide_out_to_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.rekstudios.cooking.AddFragment"
+        android:label="@string/add_text"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_choose"
+            app:destination="@id/navigation_choose" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.rekstudios.cooking.FavoriteFragment"
+        android:label="@string/favorite_text"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_add"
+            app:destination="@id/navigation_add" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_choose"
+            app:destination="@id/navigation_choose" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.rekstudios.cooking.ProfileFragment"
+        android:label="@string/profile_text"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_add"
+            app:destination="@id/navigation_add" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_choose"
+            app:destination="@id/navigation_choose" />
+    </fragment>
+</navigation>

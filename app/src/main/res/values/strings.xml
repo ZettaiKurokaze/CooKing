@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">CooKing</string>
+    <string name="title_activity_intro">IntroActivity</string>
+    <string name="intro_activity_background">Intro Activity Background</string>
+    <string name="intro_text">Let\'s\nGet\nCooKing</string>
+    <string name="intro_button_text">Get Started</string>
+    <string name="login_background_image">login background image</string>
+    <string name="twitter_icon">twitter icon</string>
+    <string name="meta_icon">meta icon</string>
+    <string name="google_icon">google icon</string>
+    <string name="login_text">Log In</string>
+    <string name="signup_text">Sign Up</string>
+    <string name="logo_text">Logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password_text">Forgot Password?</string>
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="choose_text">Choose</string>
+    <string name="add_text">Add</string>
+    <string name="search_text">Search</string>
+    <string name="profile_text">Profile</string>
+    <string name="favorite_text">Favorite</string>
+    <string name="choose_Title_Text_1">What\'s in Your Kitchen?</string>
+    <string name="choose_Title_Text_2">Enter Ingredients</string>
+    <string name="ingredient_icon_text">Ingredient Icon</string>
+    <string name="dummy_text">Text</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
