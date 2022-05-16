@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "888003167807",
+    "project_id": "cooking-rektstudios",
+    "storage_bucket": "cooking-rektstudios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888003167807:android:e463abeeea31377c6a1a8a",
+        "android_client_info": {
+          "package_name": "com.rektstudios.cooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888003167807-89iboh0nu8b5rip12j943ug5miu1kv5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbqqwZ_Zgh1IOyEyfoL5fFXFhcmPxwBLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888003167807-89iboh0nu8b5rip12j943ug5miu1kv5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

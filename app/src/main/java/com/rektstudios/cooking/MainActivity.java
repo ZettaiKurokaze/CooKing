@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
@@ -14,12 +14,14 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.rekstudios.cooking.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.rektstudios.cooking.databinding.ActivityMainBinding;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
     BottomNavigationView bottomNavigation;
@@ -55,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
+    }
+
+    @Override
+    protected void onDestroy() {
+//        FirebaseAuth.getInstance().signOut();
+        super.onDestroy();
     }
 
     public LinkedList<IngredientModel> getIngredientsList() {

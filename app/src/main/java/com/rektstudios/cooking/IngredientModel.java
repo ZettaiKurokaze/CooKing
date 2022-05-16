@@ -1,9 +1,9 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 public class IngredientModel {
 
-    private String ingredientName;
-    private int imageRes;
+    private final String ingredientName;
+    private final int imageRes;
     private boolean buttonFlag;
 
     public IngredientModel(int imageRes, String ingredientName){

@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>{
 
@@ -78,7 +76,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             RecipeTime=itemView.findViewById(R.id.recipeTime);
             RecipeRating=itemView.findViewById(R.id.recipeRating);
             RecipeCal=itemView.findViewById(R.id.recipeCal);
-            FavoriteButton=itemView.findViewById(R.id.recipeFavoriteButton);
+            FavoriteButton=itemView.findViewById(R.id.recipeFavButton);
         }
     }
 }

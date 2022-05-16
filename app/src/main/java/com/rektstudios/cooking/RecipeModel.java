@@ -1,9 +1,12 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 public class RecipeModel {
 
-    private String recipeName, recipeTime, recipeRating, recipeCal;
-    private int recipeImage;
+    private final String recipeName;
+    private final String recipeTime;
+    private final String recipeRating;
+    private final String recipeCal;
+    private final int recipeImage;
     private boolean favoriteFlag;
 
     public RecipeModel(String recipeName, String recipeTime, String recipeRating, String recipeCal, int recipeImage) {

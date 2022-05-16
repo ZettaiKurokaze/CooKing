@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_choose"
-        android:name="com.rekstudios.cooking.ChooseFragment"
+        android:name="com.rektstudios.cooking.ChooseFragment"
         android:label="@string/choose_text"
         tools:layout="@layout/fragment_choose" >
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.rekstudios.cooking.SearchFragment"
+        android:name="com.rektstudios.cooking.SearchFragment"
         android:label="@string/search_text"
         tools:layout="@layout/fragment_search" >
         <action
@@ -53,7 +53,7 @@
 
     <fragment
         android:id="@+id/navigation_add"
-        android:name="com.rekstudios.cooking.AddFragment"
+        android:name="com.rektstudios.cooking.AddFragment"
         android:label="@string/add_text"
         tools:layout="@layout/fragment_add" >
         <action
@@ -72,7 +72,7 @@
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.rekstudios.cooking.FavoriteFragment"
+        android:name="com.rektstudios.cooking.FavoriteFragment"
         android:label="@string/favorite_text"
         tools:layout="@layout/fragment_favorite" >
         <action
@@ -91,7 +91,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.rekstudios.cooking.ProfileFragment"
+        android:name="com.rektstudios.cooking.ProfileFragment"
         android:label="@string/profile_text"
         tools:layout="@layout/fragment_profile" >
         <action

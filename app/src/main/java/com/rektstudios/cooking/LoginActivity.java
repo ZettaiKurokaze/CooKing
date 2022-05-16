@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
@@ -11,6 +11,9 @@ import android.view.WindowManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.Serializable;
 
 public class LoginActivity extends AppCompatActivity {
 

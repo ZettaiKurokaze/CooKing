@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.view.LayoutInflater;
 import android.view.View;

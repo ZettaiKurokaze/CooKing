@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,7 +80,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             RecipeTime = itemView.findViewById(R.id.recipeTime);
             RecipeRating = itemView.findViewById(R.id.recipeRating);
             RecipeCal = itemView.findViewById(R.id.recipeCal);
-            FavoriteButton = itemView.findViewById(R.id.recipeFavoriteButton);
+            FavoriteButton = itemView.findViewById(R.id.recipeFavButton);
         }
     }
 

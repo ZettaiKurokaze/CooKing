@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.os.Bundle;
 
@@ -9,16 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rekstudios.cooking.databinding.FragmentProfileBinding;
+import com.bumptech.glide.Glide;
+import com.rektstudios.cooking.databinding.FragmentAddBinding;
 
-public class ProfileFragment extends Fragment {
 
-    private FragmentProfileBinding binding;
+public class AddFragment extends Fragment {
+
+    private FragmentAddBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
+        binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
     }

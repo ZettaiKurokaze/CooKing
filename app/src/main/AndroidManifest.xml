@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rekstudios.cooking">
+    package="com.rektstudios.cooking">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -11,15 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CooKing">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.rektstudios.cooking.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.rektstudios.cooking.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name=".IntroActivity"
+            android:name="com.rektstudios.cooking.IntroActivity"
             android:exported="true"
             android:theme="@style/Theme.CooKing.Fullscreen">
             <intent-filter>

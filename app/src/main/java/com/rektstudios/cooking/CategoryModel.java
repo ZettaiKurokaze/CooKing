@@ -1,8 +1,8 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 public class CategoryModel {
 
-    private String categoryName;
+    private final String categoryName;
     private boolean touchFlag;
 
     public CategoryModel(String categoryName){

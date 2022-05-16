@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ingredient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ingredient_background"
-    android:paddingBottom="100dp"
     tools:context=".ProfileFragment">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="100dp"
+    android:clipToPadding="false">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/accountImageCardView"
@@ -36,31 +40,35 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/accountNameTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="@string/dummy_text"
         android:textColor="#050908"
-        android:textSize="16sp"
+        android:paddingTop="2dp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountImageCardView"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintHeight_percent=".07"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/accountIconCardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         app:cardBackgroundColor="#E9E7ED"
         app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountNameTextView"
-        app:layout_constraintVertical_bias=".1"
         app:layout_constraintWidth_percent=".1">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -74,7 +82,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/accountTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="fill_vertical"
         android:text="@string/account_management_text"
@@ -89,7 +97,9 @@
         app:layout_constraintEnd_toStartOf="@+id/accountButton"
         app:layout_constraintStart_toEndOf="@+id/accountIconCardView"
         app:layout_constraintTop_toTopOf="@+id/accountIconCardView"
-        app:layout_constraintHorizontal_bias=".2"/>
+        app:layout_constraintHorizontal_bias=".3"
+        app:layout_constraintWidth_percent=".5"
+        app:layout_constraintHeight_percent=".05"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/accountButton"
@@ -133,7 +143,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/settingsTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="fill_vertical"
@@ -145,8 +155,10 @@
         app:autoSizeStepGranularity="1dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/settingsIconCardView"
+        app:layout_constraintEnd_toEndOf="@+id/accountTextView"
         app:layout_constraintStart_toStartOf="@+id/accountTextView"
-        app:layout_constraintTop_toTopOf="@+id/settingsIconCardView" />
+        app:layout_constraintTop_toTopOf="@+id/settingsIconCardView"
+        app:layout_constraintHeight_percent=".05"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/settingsButton"
@@ -190,7 +202,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/languageTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="fill_vertical"
@@ -202,8 +214,10 @@
         app:autoSizeStepGranularity="1dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/languageIconCardView"
+        app:layout_constraintEnd_toEndOf="@+id/accountTextView"
         app:layout_constraintStart_toStartOf="@+id/accountTextView"
-        app:layout_constraintTop_toTopOf="@+id/languageIconCardView" />
+        app:layout_constraintTop_toTopOf="@+id/languageIconCardView"
+        app:layout_constraintHeight_percent=".05" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/languageButton"
@@ -246,7 +260,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/faqTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="fill_vertical"
@@ -258,6 +272,8 @@
         app:autoSizeStepGranularity="1dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/faqIconCardView"
+        app:layout_constraintEnd_toEndOf="@+id/accountTextView"
+        app:layout_constraintHeight_percent=".05"
         app:layout_constraintStart_toStartOf="@+id/accountTextView"
         app:layout_constraintTop_toTopOf="@+id/faqIconCardView" />
 
@@ -302,7 +318,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/aboutTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="fill_vertical"
@@ -314,8 +330,10 @@
         app:autoSizeStepGranularity="1dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/aboutIconCardView"
+        app:layout_constraintEnd_toEndOf="@+id/accountTextView"
         app:layout_constraintStart_toStartOf="@+id/accountTextView"
-        app:layout_constraintTop_toTopOf="@+id/aboutIconCardView" />
+        app:layout_constraintTop_toTopOf="@+id/aboutIconCardView"
+        app:layout_constraintHeight_percent=".05" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/aboutButton"
@@ -358,7 +376,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/logoutTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="fill_vertical"
@@ -370,8 +388,10 @@
         app:autoSizeStepGranularity="1dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/logoutIconCardView"
+        app:layout_constraintEnd_toEndOf="@+id/accountTextView"
         app:layout_constraintStart_toStartOf="@+id/accountTextView"
-        app:layout_constraintTop_toTopOf="@+id/logoutIconCardView" />
+        app:layout_constraintTop_toTopOf="@+id/logoutIconCardView"
+        app:layout_constraintHeight_percent=".05" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/logoutButton"
@@ -390,3 +410,4 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,4 +1,4 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.os.Bundle;
 
@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.rekstudios.cooking.databinding.FragmentSearchBinding;
+import com.rektstudios.cooking.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
 

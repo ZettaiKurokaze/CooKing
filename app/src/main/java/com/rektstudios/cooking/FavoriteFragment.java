@@ -1,11 +1,10 @@
-package com.rekstudios.cooking;
+package com.rektstudios.cooking;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentFactory;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,11 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rekstudios.cooking.databinding.FragmentFavoriteBinding;
+import com.rektstudios.cooking.databinding.FragmentFavoriteBinding;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class FavoriteFragment extends Fragment {
 
