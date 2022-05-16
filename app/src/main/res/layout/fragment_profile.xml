@@ -1,14 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ingredient_background"
+    android:paddingBottom="100dp"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/accountImageCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".08"
+        app:layout_constraintWidth_percent=".2">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/accountImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/account_image_text"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            tools:ignore="ImageContrastCheck" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/accountNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="@string/dummy_text"
+        android:textColor="#050908"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountImageCardView"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/accountIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountNameTextView"
+        app:layout_constraintVertical_bias=".1"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/accountIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/accountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="fill_vertical"
+        android:text="@string/account_management_text"
+        android:textColor="#050908"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingTop="2dp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/accountIconCardView"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton"
+        app:layout_constraintStart_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toTopOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".2"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/accountButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/accountIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/accountIconCardView"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingsIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toBottomOf="@+id/accountIconCardView"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/settingsIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_settings"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/settingsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="fill_vertical"
+        android:paddingTop="2dp"
+        android:text="@string/settings_text"
+        android:textColor="#050908"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsIconCardView"
+        app:layout_constraintStart_toStartOf="@+id/accountTextView"
+        app:layout_constraintTop_toTopOf="@+id/settingsIconCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountButton"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="@+id/accountButton"
+        app:layout_constraintTop_toTopOf="@+id/settingsIconCardView"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/languageIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toBottomOf="@+id/settingsIconCardView"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/languageIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_language"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/languageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="fill_vertical"
+        android:paddingTop="2dp"
+        android:text="@string/language_text"
+        android:textColor="#050908"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/languageIconCardView"
+        app:layout_constraintStart_toStartOf="@+id/accountTextView"
+        app:layout_constraintTop_toTopOf="@+id/languageIconCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/languageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/languageIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountButton"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="@+id/accountButton"
+        app:layout_constraintTop_toTopOf="@+id/languageIconCardView"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/faqIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toBottomOf="@+id/languageIconCardView"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/faqIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_faq"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/faqTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="fill_vertical"
+        android:paddingTop="2dp"
+        android:text="@string/faq_text"
+        android:textColor="#050908"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/faqIconCardView"
+        app:layout_constraintStart_toStartOf="@+id/accountTextView"
+        app:layout_constraintTop_toTopOf="@+id/faqIconCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/faqButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/faqIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountButton"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="@+id/accountButton"
+        app:layout_constraintTop_toTopOf="@+id/faqIconCardView"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/aboutIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toBottomOf="@+id/faqIconCardView"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aboutIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_about"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="fill_vertical"
+        android:paddingTop="2dp"
+        android:text="@string/about_us_text"
+        android:textColor="#050908"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/aboutIconCardView"
+        app:layout_constraintStart_toStartOf="@+id/accountTextView"
+        app:layout_constraintTop_toTopOf="@+id/aboutIconCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/aboutButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/aboutIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountButton"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="@+id/accountButton"
+        app:layout_constraintTop_toTopOf="@+id/aboutIconCardView"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logoutIconCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#E9E7ED"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountIconCardView"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="@+id/accountIconCardView"
+        app:layout_constraintTop_toBottomOf="@+id/aboutIconCardView"
+        app:layout_constraintWidth_percent=".1">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoutIconImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logoutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="fill_vertical"
+        android:paddingTop="2dp"
+        android:text="@string/logout_text"
+        android:textColor="#050908"
+        app:autoSizeMaxTextSize="100dp"
+        app:autoSizeMinTextSize="8dp"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/logoutIconCardView"
+        app:layout_constraintStart_toStartOf="@+id/accountTextView"
+        app:layout_constraintTop_toTopOf="@+id/logoutIconCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/logoutIconCardView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/accountButton"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="@+id/accountButton"
+        app:layout_constraintTop_toTopOf="@+id/logoutIconCardView"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

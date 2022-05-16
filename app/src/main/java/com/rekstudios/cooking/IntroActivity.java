@@ -1,6 +1,7 @@
 package com.rekstudios.cooking;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.view.WindowCompat;
 
 import android.content.Intent;
@@ -27,7 +28,7 @@ public class IntroActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.activity_intro);
-        Button introButton = findViewById(R.id.introButton);
+        AppCompatButton introButton = findViewById(R.id.introButton);
         introButton.setOnClickListener(v -> {
             Intent intent=new Intent(IntroActivity.this,LoginActivity.class);
             startActivity(intent);

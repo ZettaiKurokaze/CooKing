@@ -30,4 +30,20 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="search_title_1_text">Delicious</string>
+    <string name="search_title_2_text">Easy to cook menu</string>
+    <string name="search_category_title_text">Category</string>
+    <string name="search_popular_title_text">Popular</string>
+    <string name="recipe_image_desc">Recipe image</string>
+    <string name="recipe_favorite_icon_desc">Recipe Favorite Icon</string>
+    <string name="rating_star_icon_desc">Rating Star icon</string>
+    <string name="favorite_title_text_1">Favorites</string>
+    <string name="favorite_title_text_2">Your kitchen your choice</string>
+    <string name="account_image_text">Account Image</string>
+    <string name="account_management_text">Account Management</string>
+    <string name="settings_text">Settings</string>
+    <string name="language_text">Language</string>
+    <string name="faq_text">FAQ</string>
+    <string name="about_us_text">About Us</string>
+    <string name="logout_text">Logout</string>
 </resources>

@@ -16,15 +16,24 @@ import android.view.WindowManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rekstudios.cooking.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     BottomNavigationView bottomNavigation;
+    private LinkedList<IngredientModel> mIngredientModels;
+    private ArrayList<RecipeModel> recipeModels;
 
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        InitIngredients();
+        InitRecipes();
+
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -46,47 +55,49 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.mainActivityLayout, new ChooseFragment()).commit();
-//        navigationView.setSelectedItemId(R.id.nav_choose);
-//
-//        navigationView.setOnItemSelectedListener(item -> {
-//            Fragment fragment = null;
-//            switch (item.getItemId()){
-//
-//                case R.id.nav_choose:
-//                    fragment = new ChooseFragment();
-//                    break;
-//
-//                case R.id.nav_search:
-//                    fragment = new SearchFragment();
-////                    getSupportFragmentManager().beginTransaction()
-////                            .setCustomAnimations(
-////                                    R.anim.slide_in_from_right,  // enter
-////                                    R.anim.slide_out_to_left,  // exit
-////                                    R.anim.slide_in_from_left,   // popEnter
-////                                    R.anim.slide_out_to_right  // popExit
-////                            )
-////                            .replace(R.id.mainActivityLayout,fragment)
-////                            .addToBackStack(null)
-////                            .commit();
-//                    break;
-//
-//                case R.id.nav_add:
-//                    fragment = new AddFragment();
-//                    break;
-//
-//                case R.id.nav_favorite:
-//                    fragment = new FavoriteFragment();
-//                    break;
-//
-//                case R.id.nav_profile:
-//                    fragment = new ProfileFragment();
-//                    break;
-//            }
-//            if(fragment!=null)
-//                getSupportFragmentManager().beginTransaction().replace(R.id.mainActivityLayout, fragment).commit();
-//
-//            return true;
-//        });
     }
+
+    public LinkedList<IngredientModel> getIngredientsList() {
+        return mIngredientModels;
+    }
+
+    public ArrayList<RecipeModel> getRecipeList() {
+        return recipeModels;
+    }
+
+    public void InitIngredients(){
+        mIngredientModels= new LinkedList<>();
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple00"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple01"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple02"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple03"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple04"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple05"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple06"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple07"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple08"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple09"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple10"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple11"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple12"));
+    }
+
+    public void InitRecipes() {
+        recipeModels=new ArrayList<>();
+        recipeModels.add(new RecipeModel("Ramen01","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen02","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen03","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen04","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen05","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen06","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen07","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen08","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen09","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen10","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen11","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen12","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen13","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+
+    }
+
 }

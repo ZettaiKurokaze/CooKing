@@ -3,6 +3,7 @@ package com.rekstudios.cooking;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,6 +62,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
                 moveItemToTop(data);
             }
         });
+        holder.itemView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.recycler_anim));
     }
 
     @Override

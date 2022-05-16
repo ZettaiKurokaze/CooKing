@@ -3,17 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/category_default.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_about.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.2915" />
+        <entry key="app/src/main/res/drawable/ic_arrow.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_compass.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_faq.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_google.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_heart.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_heart_filled.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_heart_outline.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/ic_ingredient_add.xml" value="0.3205" />
-        <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/ic_language.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2915" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.33" />
+        <entry key="app/src/main/res/drawable/ic_logout.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/ic_meta.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2045" />
+        <entry key="app/src/main/res/drawable/ic_pineapple.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/ic_ramen.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/ic_star.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_twitter.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_user.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ingredient_background.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ingredient_button.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/ingredient_button_default.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/ingredient_button_selected.xml" value="0.3565" />
+        <entry key="app/src/main/res/drawable/intro_button_background.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/intro_button_res.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/item_selector.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/login_modal.xml" value="0.3205" />
+        <entry key="app/src/main/res/drawable/profile_circle.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/query_cursor.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/round_corner.xml" value="0.3205" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.2915" />
@@ -24,12 +49,19 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18229166666666666" />
-        <entry key="app/src/main/res/layout/fragment_choose.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/category_card.xml" value="1.0" />
+        <entry key="app/src/main/res/layout/fragment_add.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_choose.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/ingredient_card.xml" value="0.34974358974358977" />
+        <entry key="app/src/main/res/layout/ingredient_card.xml" value="0.5763612217795485" />
+        <entry key="app/src/main/res/layout/recipe_card_grid.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.18229166666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.239" />
       </map>
     </option>
   </component>

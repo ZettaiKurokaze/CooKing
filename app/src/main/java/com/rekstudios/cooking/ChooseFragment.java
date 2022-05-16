@@ -23,7 +23,7 @@ public class ChooseFragment extends Fragment {
     private FragmentChooseBinding binding;
     private SearchView ingredientSearch;
     private LinkedList<IngredientModel> ingredientModels;
-    private IngredientsAdapter adapter;
+    private IngredientsAdapter ingredientAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -46,30 +46,16 @@ public class ChooseFragment extends Fragment {
             }
         });
 
-
-
+        ingredientModels=((MainActivity) getActivity()).getIngredientsList();
 
         IngredientRecyclerView=root.findViewById(R.id.ingredientRecyclerView);
         IngredientRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         IngredientRecyclerView.setHasFixedSize(true);
 
-        ingredientModels= new LinkedList<>();
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple00"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple01"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple02"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple03"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple04"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple05"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple06"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple07"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple08"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple09"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple10"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple11"));
-        ingredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple12"));
 
-        adapter= new IngredientsAdapter(ingredientModels);
-        IngredientRecyclerView.setAdapter(adapter);
+
+        ingredientAdapter= new IngredientsAdapter(ingredientModels);
+        IngredientRecyclerView.setAdapter(ingredientAdapter);
 
         return root;
     }
@@ -82,8 +68,11 @@ public class ChooseFragment extends Fragment {
             }
         }
 
-        if(!filteredList.isEmpty()){
-            adapter.setFilteredList(filteredList);
+        if(filteredList.isEmpty()){
+            ingredientAdapter.setFilteredList(new LinkedList<>());
+        }
+        else{
+            ingredientAdapter.setFilteredList(filteredList);
         }
     }
 

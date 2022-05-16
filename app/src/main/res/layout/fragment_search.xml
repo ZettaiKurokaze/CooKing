@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ingredient_background"
     tools:context=".SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/categoryScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/searchTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/search_title_1_text"
+                    android:textColor="@color/light_grey"
+                    app:layout_constraintBottom_toTopOf="@id/recipeSearchBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".08"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/searchTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/search_title_2_text"
+                    android:textColor="#313924"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/searchTitle1"
+                    app:layout_constraintTop_toBottomOf="@id/searchTitle1" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/recipeSearchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/search_background"
+                    android:elevation="3dp"
+                    android:gravity="center_vertical"
+                    android:iconifiedByDefault="false"
+                    android:searchIcon="@null"
+                    android:theme="@style/Search.QueryHint.Color"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintEnd_toEndOf="@id/recipeRecyclerView"
+                    app:layout_constraintStart_toStartOf="@id/recipeRecyclerView"
+                    app:layout_constraintTop_toBottomOf="@id/searchTitle2"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="Search your perfect recipe"
+                    app:searchHintIcon="@null"
+                    app:searchIcon="@null" />
+
+                <TextView
+                    android:id="@+id/searchCategoryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/search_category_title_text"
+                    android:textColor="#313924"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/recipeSearchBar"
+                    app:layout_constraintTop_toBottomOf="@id/recipeSearchBar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/searchCategoryTitle" />
+
+                <TextView
+                    android:id="@+id/searchPopularTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/search_popular_title_text"
+                    android:textColor="#313924"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/searchCategoryTitle"
+                    app:layout_constraintTop_toBottomOf="@id/categoryRecyclerView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recipeRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/searchPopularTitle"
+                    app:layout_constraintWidth_percent=".865"
+                    android:paddingBottom="100dp"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

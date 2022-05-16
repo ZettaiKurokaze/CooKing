@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ingredient_background"
     tools:context=".FavoriteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/favScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/searchTitle1Fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/favorite_title_text_1"
+                    android:textColor="@color/light_grey"
+                    app:layout_constraintBottom_toTopOf="@id/favSearch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias=".08"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/searchTitle2Fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/favorite_title_text_2"
+                    android:textColor="#313924"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/searchTitle1Fav"
+                    app:layout_constraintTop_toBottomOf="@id/searchTitle1Fav" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/favSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/search_background"
+                    android:elevation="3dp"
+                    android:gravity="center_vertical"
+                    android:iconifiedByDefault="false"
+                    android:theme="@style/Search.QueryHint.Color"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintEnd_toEndOf="@id/favRecyclerView"
+                    app:layout_constraintStart_toStartOf="@id/favRecyclerView"
+                    app:layout_constraintTop_toBottomOf="@id/searchTitle2Fav"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="Search delicious recipes here"
+                    app:searchHintIcon="@null"
+                    app:searchIcon="@null" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/favRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/favSearch"
+                    app:layout_constraintWidth_percent=".865"
+                    android:paddingBottom="100dp"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

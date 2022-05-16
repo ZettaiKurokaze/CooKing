@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/loginbackground"
+        app:srcCompat="@drawable/login_background"
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
@@ -75,7 +75,10 @@
                 app:tabIndicatorFullWidth="true"
                 app:tabIndicatorGravity="stretch"
                 app:tabMode="fixed"
-                app:tabRippleColor="#00FFFFFF">
+                app:tabRippleColor="#00FFFFFF"
+                app:tabSelectedTextColor="@color/black_2"
+                app:tabTextColor="@color/white"
+                app:tabTextAppearance="@style/Tab.Font">
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/loginTab"
@@ -137,7 +140,7 @@
             app:layout_constraintEnd_toStartOf="@id/fabGoogle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginViewPager"
-            app:srcCompat="@drawable/ic_meta"
+            app:srcCompat="@drawable/ic_facebook"
             app:tint="@null"
             tools:ignore="SpeakableTextPresentCheck" />
 
