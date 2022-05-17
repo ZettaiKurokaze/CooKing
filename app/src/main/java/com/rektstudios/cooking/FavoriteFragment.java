@@ -59,7 +59,7 @@ public class FavoriteFragment extends Fragment {
         InitFavorites();
         listener= (v, position) -> {
             Fragment fragment = new RecipeFragment();Bundle args = new Bundle();
-            args.putString("RecipePosition", Integer.toString(position));
+            args.putString("RecipeName", favoriteModels.get(position).getRecipeName());
             fragment.setArguments(args);
 
             FragmentManager fm = getFragmentManager();
