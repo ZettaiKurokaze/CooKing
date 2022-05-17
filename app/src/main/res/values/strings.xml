@@ -46,4 +46,5 @@
     <string name="faq_text">FAQ</string>
     <string name="about_us_text">About Us</string>
     <string name="logout_text">Logout</string>
+    <string name="ingredients">Ingredients</string>
 </resources>

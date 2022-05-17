@@ -15,10 +15,12 @@ import java.util.LinkedList;
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder> {
 
     LinkedList<RecipeModel> linkedList, backupList;
+    private FavoritesAdapter.RecipeClickListener listener;
 
-    public FavoritesAdapter(LinkedList<RecipeModel> linkedList) {
+    public FavoritesAdapter(LinkedList<RecipeModel> linkedList, FavoritesAdapter.RecipeClickListener listener) {
         this.linkedList = linkedList;
         this.backupList = linkedList;
+        this.listener = listener;
     }
 
     public void setFilteredList(LinkedList<RecipeModel> filteredList) {
@@ -68,7 +70,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
         return linkedList.size();
     }
 
-    public class FavoritesViewHolder extends RecyclerView.ViewHolder {
+    public class FavoritesViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         ImageView RecipeImage;
         TextView RecipeName, RecipeTime, RecipeRating, RecipeCal;
         ImageButton FavoriteButton;
@@ -81,7 +83,18 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             RecipeRating = itemView.findViewById(R.id.recipeRating);
             RecipeCal = itemView.findViewById(R.id.recipeCal);
             FavoriteButton = itemView.findViewById(R.id.recipeFavButton);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            listener.OnClick(v,getAdapterPosition());
+        }
+    }
+
+
+    public interface RecipeClickListener{
+        void OnClick(View v, int position);
     }
 
 }

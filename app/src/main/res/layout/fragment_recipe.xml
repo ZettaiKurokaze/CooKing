@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:background="@drawable/ingredient_background"
+    android:overScrollMode="never"
     tools:context=".RecipeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,11 +20,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:src="@drawable/ic_ramen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/backButton"
-            app:layout_constraintWidth_percent=".8" />
+            app:layout_constraintWidth_percent=".8"
+            app:srcCompat="@drawable/ic_ramen" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/backButton"
@@ -32,6 +33,7 @@
             android:background="@android:color/transparent"
             android:padding="10dp"
             android:scaleType="centerInside"
+            android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +42,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0"
             app:layout_constraintWidth_percent=".12"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-            tools:src="@drawable/ic_back" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/recipeNameText"
@@ -53,14 +54,33 @@
             android:paddingTop="2dp"
             android:text="@string/dummy_text"
             android:textColor="#050908"
+            app:layout_constraintDimensionRatio="3.5:1"
             app:autoSizeMaxTextSize="100dp"
             app:autoSizeMinTextSize="8dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="@+id/proteinIcon"
             app:layout_constraintStart_toStartOf="@+id/recipeImageView"
-            app:layout_constraintTop_toBottomOf="@+id/recipeImageView"
-            app:layout_constraintHeight_percent=".1"/>
+            app:layout_constraintTop_toBottomOf="@+id/startCookingButton"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/recipeIngredientsText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="216dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center|start"
+            android:paddingTop="2dp"
+            android:text="@string/ingredients"
+            android:textColor="#050908"
+            app:layout_constraintDimensionRatio="4.5:1"
+            app:autoSizeMaxTextSize="100dp"
+            app:autoSizeMinTextSize="8dp"
+            app:autoSizeStepGranularity="1dp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="@+id/proteinIcon"
+            app:layout_constraintStart_toStartOf="@+id/recipeImageView"
+            app:layout_constraintTop_toBottomOf="@+id/recipeImageView" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/recipeFavButton"
@@ -104,13 +124,13 @@
             android:paddingTop="3dp"
             android:text="@string/dummy_text"
             android:textColor="#050908"
+            app:layout_constraintDimensionRatio="2.5:1"
             app:autoSizeMaxTextSize="100dp"
             app:autoSizeMinTextSize="8dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="@+id/carbIcon"
             app:layout_constraintEnd_toStartOf="@+id/proteinIcon"
-            app:layout_constraintHeight_percent=".06"
             app:layout_constraintHorizontal_bias="0.39"
             app:layout_constraintStart_toEndOf="@+id/carbIcon"
             app:layout_constraintTop_toTopOf="@+id/carbIcon"
@@ -148,7 +168,6 @@
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="@+id/proteinIcon"
             app:layout_constraintEnd_toEndOf="@+id/recipeImageView"
-            app:layout_constraintHeight_percent=".06"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/proteinIcon"
             app:layout_constraintTop_toTopOf="@+id/proteinIcon"
@@ -185,7 +204,6 @@
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="@+id/calIcon"
             app:layout_constraintEnd_toEndOf="@+id/carbText"
-            app:layout_constraintHeight_percent=".06"
             app:layout_constraintStart_toStartOf="@+id/carbText"
             app:layout_constraintTop_toTopOf="@+id/calIcon" />
 
@@ -220,7 +238,6 @@
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="@+id/fatIcon"
             app:layout_constraintEnd_toEndOf="@+id/proteinText"
-            app:layout_constraintHeight_percent=".06"
             app:layout_constraintStart_toStartOf="@+id/proteinText"
             app:layout_constraintTop_toTopOf="@+id/fatIcon" />
 
@@ -232,7 +249,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/recipeNameText"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/recipeImageView"
-            app:layout_constraintHeight_percent=".03"
+            app:layout_constraintWidth_percent=".05"
             app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toEndOf="@+id/recipeNameText"
             app:layout_constraintTop_toTopOf="@+id/recipeNameText"
@@ -267,7 +284,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/recipeNameText"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/ratingIconRecipe"
-            app:layout_constraintHeight_percent=".03"
             app:layout_constraintStart_toStartOf="@+id/ratingIconRecipe"
             app:layout_constraintTop_toTopOf="@+id/recipeNameText"
             app:layout_constraintVertical_bias="0.8"
@@ -292,6 +308,44 @@
             app:layout_constraintStart_toStartOf="@+id/ratingText"
             app:layout_constraintTop_toTopOf="@+id/timeIconRecipe"
             app:layout_constraintWidth_percent=".12" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipeIngredientsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/recipeImageView"
+            app:layout_constraintStart_toStartOf="@+id/recipeImageView"
+            app:layout_constraintTop_toBottomOf="@+id/recipeIngredientsText"
+            tools:listitem="@layout/recipe_ingredient_card" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/recipeRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:numStars="5"
+            android:progressBackgroundTint="#70C52A2B"
+            android:progressTint="@color/red"
+            android:secondaryProgressTint="#B0C52A2B"
+            app:layout_constraintEnd_toEndOf="@+id/recipeImageView"
+            app:layout_constraintStart_toStartOf="@+id/recipeImageView"
+            app:layout_constraintTop_toBottomOf="@id/recipeIngredientsRecyclerView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startCookingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start!"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"
+            android:background="@drawable/intro_button_background"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/recipeImageView"
+            app:layout_constraintEnd_toEndOf="@+id/recipeImageView"
+            app:layout_constraintStart_toStartOf="@+id/recipeImageView"
+            app:layout_constraintTop_toBottomOf="@+id/recipeImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -1,93 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ingredientScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ingredient_background"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
     tools:context=".ChooseFragment">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/ingredientScrollView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/chooseTitleText1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/choose_Title_Text_1"
+            android:textColor="#313934"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/ingredientSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ingredientRecyclerView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/chooseTitleText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/choose_Title_Text_2"
+            android:textColor="@color/light_grey"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ingredientSearch"
+            app:layout_constraintTop_toBottomOf="@+id/chooseTitleText1"
+            tools:ignore="TextContrastCheck" />
 
-                <TextView
-                    android:id="@+id/chooseTitleText1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="@string/choose_Title_Text_1"
-                    android:textColor="#313934"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toTopOf="@id/ingredientSearch"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/ingredientRecyclerView"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/ingredientSearch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/search_background"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:theme="@style/Search.QueryHint.Color"
+            app:layout_constraintDimensionRatio="7:1"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="@+id/ingredientRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/ingredientRecyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/chooseTitleText2"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Type and add your ingredients.."
+            app:searchHintIcon="@null"
+            app:searchIcon="@null"/>
 
-                <TextView
-                    android:id="@+id/chooseTitleText2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="@string/choose_Title_Text_2"
-                    android:textColor="@color/light_grey"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/ingredientSearch"
-                    app:layout_constraintTop_toBottomOf="@+id/chooseTitleText1"
-                    tools:ignore="TextContrastCheck" />
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/ingredientSearch"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/search_background"
-                    android:elevation="3dp"
-                    android:gravity="center_vertical"
-                    android:theme="@style/Search.QueryHint.Color"
-                    app:iconifiedByDefault="false"
-                    app:layout_constraintEnd_toEndOf="@+id/ingredientRecyclerView"
-                    app:layout_constraintStart_toStartOf="@+id/ingredientRecyclerView"
-                    app:layout_constraintTop_toBottomOf="@+id/chooseTitleText2"
-                    app:queryBackground="@android:color/transparent"
-                    app:queryHint="Type and add your ingredients.."
-                    app:searchHintIcon="@null"
-                    app:searchIcon="@null" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/ingredientRecyclerView"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:paddingBottom="100dp"
-                    android:clipToPadding="false"
-                    android:overScrollMode="never"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ingredientSearch"
-                    app:layout_constraintWidth_percent=".85" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ingredientRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ingredientSearch"
+            app:layout_constraintWidth_percent=".85"
+            tools:listitem="@layout/ingredient_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

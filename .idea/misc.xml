@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_start.xml" value="0.239" />
         <entry key="app/src/main/res/drawable/ic_twitter.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ingredient_background.xml" value="0.25" />
@@ -57,11 +58,12 @@
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3302083333333333" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/fragment_recipe.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_recipe.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/ingredient_card.xml" value="0.5763612217795485" />
+        <entry key="app/src/main/res/layout/ingredient_card.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/recipe_card_grid.xml" value="0.5344827586206896" />
+        <entry key="app/src/main/res/layout/recipe_ingredient_card.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.34974358974358977" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.239" />

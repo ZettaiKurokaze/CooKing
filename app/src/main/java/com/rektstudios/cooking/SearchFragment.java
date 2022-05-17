@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rektstudios.cooking.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
@@ -28,6 +31,7 @@ public class SearchFragment extends Fragment {
     private RecipeAdapter recipeAdapter;
     private RecyclerView categoryRecycler;
     private RecyclerView recipeRecycler;
+    private RecipeAdapter.RecipeClickListener listener;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -70,8 +74,17 @@ public class SearchFragment extends Fragment {
         recipeRecycler.setHasFixedSize(true);
 
         recipeModels=((MainActivity) requireActivity()).getRecipeList();
+        listener= (v, position) -> {
+            Fragment fragment = new RecipeFragment();
 
-        recipeAdapter= new RecipeAdapter(recipeModels);
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.fragmentContainerView, fragment);
+            transaction.addToBackStack(null).commit();
+            BottomNavigationView bottomNavigation = root.findViewById(R.id.bottom_navigation);
+//            bottomNavigation.setVisibility(View.INVISIBLE);
+        };
+        recipeAdapter= new RecipeAdapter(recipeModels,listener);
         recipeRecycler.setAdapter(recipeAdapter);
 
         return root;

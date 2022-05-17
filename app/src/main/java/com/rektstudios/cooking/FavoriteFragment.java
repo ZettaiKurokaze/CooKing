@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rektstudios.cooking.databinding.FragmentFavoriteBinding;
 
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class FavoriteFragment extends Fragment {
     private LinkedList<RecipeModel> favoriteModels;
     private FavoritesAdapter favoritesAdapter;
     private RecyclerView favoriteRecycler;
+    private FavoritesAdapter.RecipeClickListener listener;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,7 +57,17 @@ public class FavoriteFragment extends Fragment {
 
         favoriteModels=new LinkedList<>();
         InitFavorites();
-        favoritesAdapter= new FavoritesAdapter(favoriteModels);
+        listener= (v, position) -> {
+            Fragment fragment = new RecipeFragment();
+
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.fragmentContainerView, fragment);
+            transaction.addToBackStack(null).commit();
+            BottomNavigationView bottomNavigation = root.findViewById(R.id.bottom_navigation);
+//            bottomNavigation.setVisibility(View.INVISIBLE);
+        };
+        favoritesAdapter= new FavoritesAdapter(favoriteModels, listener);
         favoriteRecycler.setAdapter(favoritesAdapter);
         return root;
     }

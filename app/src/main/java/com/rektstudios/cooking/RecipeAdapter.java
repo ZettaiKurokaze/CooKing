@@ -15,10 +15,12 @@ import java.util.ArrayList;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>{
 
     ArrayList<RecipeModel> linkedList, backupList;
+    private RecipeClickListener listener;
 
-    public RecipeAdapter(ArrayList<RecipeModel> linkedList) {
+    public RecipeAdapter(ArrayList<RecipeModel> linkedList, RecipeClickListener listener) {
         this.linkedList = linkedList;
         this.backupList = linkedList;
+        this.listener = listener;
     }
 
     public void setFilteredList(ArrayList<RecipeModel> filteredList){
@@ -65,7 +67,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         return linkedList.size();
     }
 
-    public class RecipeViewHolder extends RecyclerView.ViewHolder {
+    public class RecipeViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         ImageView RecipeImage;
         TextView RecipeName,RecipeTime,RecipeRating,RecipeCal;
         ImageButton FavoriteButton;
@@ -77,6 +79,16 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             RecipeRating=itemView.findViewById(R.id.recipeRating);
             RecipeCal=itemView.findViewById(R.id.recipeCal);
             FavoriteButton=itemView.findViewById(R.id.recipeFavButton);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            listener.OnClick(v,getAdapterPosition());
+        }
+    }
+
+    public interface RecipeClickListener{
+        void OnClick(View v, int position);
     }
 }

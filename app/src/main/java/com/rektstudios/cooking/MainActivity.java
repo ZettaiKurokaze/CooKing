@@ -19,6 +19,8 @@ import com.rektstudios.cooking.databinding.ActivityMainBinding;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity{
@@ -75,36 +77,40 @@ public class MainActivity extends AppCompatActivity{
 
     public void InitIngredients(){
         mIngredientModels= new LinkedList<>();
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple00"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple01"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple02"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple03"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple04"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple05"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple06"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple07"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple08"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple09"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple10"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple11"));
-        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple12"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_rice,"Rice"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_onion,"Onion"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Cardamom"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Cinnamon"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Curry Paste"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_pineapple,"Pineapple"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Raisin"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Coriander"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Almond"));
+        Collections.sort(mIngredientModels, new Comparator<IngredientModel>() {
+            @Override
+            public int compare(IngredientModel o1, IngredientModel o2) {
+                return o1.getIngredientName().compareTo(o2.getIngredientName());
+            }
+        });
     }
 
     public void InitRecipes() {
         recipeModels=new ArrayList<>();
-        recipeModels.add(new RecipeModel("Ramen01","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen02","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen03","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen04","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen05","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen06","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen07","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen08","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen09","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen10","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen11","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen12","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen13","120 min", "4.3", "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Biriyani","120 min", (float) 4.3, "120 KCal", R.drawable.biriyani));
+        recipeModels.add(new RecipeModel("Ramen02","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen03","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen04","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen05","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen06","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen07","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen08","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen09","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen10","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen11","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen12","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Ramen13","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
 
     }
 
