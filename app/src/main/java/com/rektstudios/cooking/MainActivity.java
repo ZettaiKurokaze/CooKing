@@ -14,7 +14,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.rektstudios.cooking.databinding.ActivityMainBinding;
 
 import java.io.Serializable;
@@ -88,6 +87,12 @@ public class MainActivity extends AppCompatActivity{
         mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Raisin"));
         mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Coriander"));
         mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Almond"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Bay Leaf"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Turmeric"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Chicken Stock"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Banana"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Milk"));
+        mIngredientModels.add(new IngredientModel(R.drawable.ic_spice,"Apple"));
         Collections.sort(mIngredientModels, new Comparator<IngredientModel>() {
             @Override
             public int compare(IngredientModel o1, IngredientModel o2) {
@@ -97,20 +102,80 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void InitRecipes() {
+        ArrayList<IngredientModel> ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_rice,"Rice","g",300));
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter","g",25));
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken","pc(s)",4));
+        ingredients.add(new IngredientModel(R.drawable.ic_onion,"Onion","pc(s)",1));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Bay Leaf","",1));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Cardamom","pod(s)",3));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Cinnamon","stick",1));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Turmeric","tsp",1));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Curry Paste","tbsp",4));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Raisin","g",85));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Chicken Stock","ml",850));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Coriander","g",30));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Almond","tbsp",2));
+        Collections.sort(ingredients, new Comparator<IngredientModel>() {
+            @Override
+            public int compare(IngredientModel o1, IngredientModel o2) {
+                return o1.getIngredientName().compareTo(o2.getIngredientName());
+            }
+        });
+
+        ArrayList<StepsModel> steps = new ArrayList<>();
+        steps.add(new StepsModel("Soak 300g basmati rice in warm water, then wash in cold until the water runs clear."));
+        steps.add(new StepsModel("Heat 25g butter in a saucepan and cook 1 finely sliced large onion with 1 bay leaf, 3 cardamom pods and 1 small cinnamon stick for 10 mins.", 6000));
+        steps.add(new StepsModel("Sprinkle in 1 tsp turmeric, then add 4 chicken breasts, cut into large chunks, and 4 tbsp curry paste. Cook until aromatic."));
+        steps.add(new StepsModel("Stir the rice into the pan with 85g raisins, then pour over 850ml chicken stock."));
+        steps.add(new StepsModel("Place a tight-fitting lid on the pan and bring to a hard boil, then lower the heat to a minimum and cook the rice for another 5 mins.", 3000));
+        steps.add(new StepsModel("Turn off the heat and leave for 10 mins. Stir well, mixing through 15g ", 6000));
+
+
         recipeModels=new ArrayList<>();
-        recipeModels.add(new RecipeModel("Biriyani","120 min", (float) 4.3, "120 KCal", R.drawable.biriyani));
-        recipeModels.add(new RecipeModel("Ramen02","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen03","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen04","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen05","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen06","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen07","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen08","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen09","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen10","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen11","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen12","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
-        recipeModels.add(new RecipeModel("Ramen13","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen));
+        recipeModels.add(new RecipeModel("Biriyani","120 min", (float) 4.2, "120 KCal", R.drawable.biriyani, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        ingredients.add(new IngredientModel(R.drawable.ic_onion,"Onion"));
+        steps = new ArrayList<>();
+        recipeModels.add(new RecipeModel("Ramen","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        recipeModels.add(new RecipeModel("Burger","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Apple"));
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        recipeModels.add(new RecipeModel("Apple Pie","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Banana"));
+        ingredients.add(new IngredientModel(R.drawable.ic_spice,"Milk"));
+        recipeModels.add(new RecipeModel("Banana Shake","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        recipeModels.add(new RecipeModel("Lasagna","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        recipeModels.add(new RecipeModel("Pasta","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        recipeModels.add(new RecipeModel("Burrito","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        ingredients.add(new IngredientModel(R.drawable.ic_butter,"Butter"));
+        recipeModels.add(new RecipeModel("Pizza","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        recipeModels.add(new RecipeModel("Chow Mein","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        recipeModels.add(new RecipeModel("Sandwich","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        recipeModels.add(new RecipeModel("Meatball","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
+        ingredients = new ArrayList<>();
+        ingredients.add(new IngredientModel(R.drawable.ic_chicken,"Chicken"));
+        ingredients.add(new IngredientModel(R.drawable.ic_rice,"Rice"));
+        recipeModels.add(new RecipeModel("Omurice","120 min", (float) 4.3, "120 KCal", R.drawable.ic_ramen, 7, ingredients, steps, 65, 70, 98));
 
     }
 

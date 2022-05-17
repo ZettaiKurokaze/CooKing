@@ -1,10 +1,12 @@
 package com.rektstudios.cooking;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,13 +23,13 @@ public class RecipeIngredientsAdapter extends RecyclerView.Adapter<RecipeIngredi
 
     @NonNull
     @Override
-    public RecipeIngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecipeIngredientsAdapter.RecipeIngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_ingredient_card, parent, false);
-        return new RecipeIngredientsViewHolder(view);
+        return new RecipeIngredientsAdapter.RecipeIngredientsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeIngredientsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecipeIngredientsAdapter.RecipeIngredientsViewHolder holder, int position) {
         IngredientModel data = arrayList.get(position);
         holder.IngredientIcon.setImageResource(data.getImageRes());
         holder.IngredientName.setText(data.getIngredientName());
@@ -47,10 +49,9 @@ public class RecipeIngredientsAdapter extends RecyclerView.Adapter<RecipeIngredi
 
         public RecipeIngredientsViewHolder(@NonNull View itemView) {
             super(itemView);
-            IngredientIcon = itemView.findViewById(R.id.ingredientIcon);
-            IngredientName = itemView.findViewById(R.id.ingredientName);
+            IngredientIcon = itemView.findViewById(R.id.recipeIngredientIcon);
+            IngredientName = itemView.findViewById(R.id.recipeIngredientName);
             IngredientAmount = itemView.findViewById(R.id.recipeIngredientAmount);
-
         }
 
     }

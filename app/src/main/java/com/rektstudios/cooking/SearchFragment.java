@@ -20,12 +20,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rektstudios.cooking.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class SearchFragment extends Fragment {
 
     private FragmentSearchBinding binding;
     private SearchView RecipeSearch;
-    private ArrayList<RecipeModel> recipeModels;
+    private LinkedList<IngredientModel> ingredients;
+    private ArrayList<RecipeModel> recipeModels, mainModels;
     private ArrayList<CategoryModel> categoryModels;
     private CategoryAdapter categoryAdapter;
     private RecipeAdapter recipeAdapter;
@@ -73,16 +75,18 @@ public class SearchFragment extends Fragment {
         recipeRecycler.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
         recipeRecycler.setHasFixedSize(true);
 
-        recipeModels=((MainActivity) requireActivity()).getRecipeList();
+        mainModels=((MainActivity) requireActivity()).getRecipeList();
+        filterByIngredients();
         listener= (v, position) -> {
-            Fragment fragment = new RecipeFragment();
+            Fragment fragment = new RecipeFragment();Bundle args = new Bundle();
+            args.putString("RecipeName", recipeModels.get(position).getRecipeName());
+            fragment.setArguments(args);
 
             FragmentManager fm = getFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(R.id.fragmentContainerView, fragment);
             transaction.addToBackStack(null).commit();
             BottomNavigationView bottomNavigation = root.findViewById(R.id.bottom_navigation);
-//            bottomNavigation.setVisibility(View.INVISIBLE);
         };
         recipeAdapter= new RecipeAdapter(recipeModels,listener);
         recipeRecycler.setAdapter(recipeAdapter);
@@ -104,6 +108,39 @@ public class SearchFragment extends Fragment {
         else{
             recipeAdapter.setFilteredList(filteredList);
         }
+    }
+
+    public void filterByIngredients(){
+        ingredients=((MainActivity) requireActivity()).getIngredientsList();
+        ArrayList<IngredientModel> list = new ArrayList<>();
+        for(IngredientModel item : ingredients){
+            if(item.isButtonFlag()){
+                list.add(item);
+            }
+        }
+        if(list.size()==0){
+            recipeModels=mainModels;
+            return;
+        }
+        recipeModels=new ArrayList<>();
+        for(RecipeModel item : mainModels){
+            ArrayList<IngredientModel> recipeList = item.getIngredients();
+            if(recipeList.size()==0)
+                break;
+            Boolean flag=false;
+            for (IngredientModel ing : list) {
+                for (IngredientModel ing2 : recipeList) {
+                    if(ing.getIngredientName().equals(ing2.getIngredientName())) {
+                        recipeModels.add(item);
+                        flag=true;
+                        break;
+                    }
+                }
+                if (flag)
+                    break;
+            }
+        }
+
     }
 
     @Override

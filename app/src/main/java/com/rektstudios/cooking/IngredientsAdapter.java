@@ -29,13 +29,13 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     @NonNull
     @Override
-    public IngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public IngredientsAdapter.IngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ingredient_card,parent,false);
-        return new IngredientsViewHolder(view);
+        return new IngredientsAdapter.IngredientsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull IngredientsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull IngredientsAdapter.IngredientsViewHolder holder, int position) {
         IngredientModel data=linkedList.get(position);
         holder.IngredientIcon.setImageResource(data.getImageRes());
         holder.IngredientName.setText(data.getIngredientName());

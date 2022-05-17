@@ -43,6 +43,6 @@ public class IngredientModel {
     }
 
     public String getAmountText(){
-        return amountType.toString()+" "+amountType;
+        return Integer.toString(amount)+" "+amountType;
     }
 }

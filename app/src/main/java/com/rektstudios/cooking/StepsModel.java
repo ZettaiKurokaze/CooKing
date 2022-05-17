@@ -4,6 +4,10 @@ public class StepsModel {
     private String stepDescription;
     private int stepTimeInSeconds;
 
+    public StepsModel(String stepDescription) {
+        this(stepDescription, 0);
+    }
+
     public StepsModel(String stepDescription, int stepTimeInSeconds) {
         this.stepDescription = stepDescription;
         this.stepTimeInSeconds = stepTimeInSeconds;

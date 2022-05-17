@@ -58,14 +58,15 @@ public class FavoriteFragment extends Fragment {
         favoriteModels=new LinkedList<>();
         InitFavorites();
         listener= (v, position) -> {
-            Fragment fragment = new RecipeFragment();
+            Fragment fragment = new RecipeFragment();Bundle args = new Bundle();
+            args.putString("RecipePosition", Integer.toString(position));
+            fragment.setArguments(args);
 
             FragmentManager fm = getFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(R.id.fragmentContainerView, fragment);
             transaction.addToBackStack(null).commit();
             BottomNavigationView bottomNavigation = root.findViewById(R.id.bottom_navigation);
-//            bottomNavigation.setVisibility(View.INVISIBLE);
         };
         favoritesAdapter= new FavoritesAdapter(favoriteModels, listener);
         favoriteRecycler.setAdapter(favoritesAdapter);

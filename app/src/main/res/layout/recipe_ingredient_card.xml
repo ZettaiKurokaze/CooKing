@@ -89,7 +89,7 @@
                 app:layout_constraintHeight_percent="0.35"
                 app:layout_constraintStart_toEndOf="@+id/recipeIngredientName"
                 app:layout_constraintTop_toTopOf="@+id/recipeIngredientIconCard"
-                app:layout_constraintWidth_percent="0.1" />
+                app:layout_constraintWidth_percent="0.2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

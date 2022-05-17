@@ -15,6 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.rektstudios.cooking.databinding.FragmentProfileBinding;
@@ -25,12 +31,21 @@ public class ProfileFragment extends Fragment {
     private AppCompatImageButton LogoutButton;
     private String email, pass, name;
     private TextView accountName;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc = GoogleSignIn.getClient(getActivity(),gso);
         accountName=root.findViewById(R.id.accountNameTextView);
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getContext());
+        if(acct!=null){
+            name = acct.getDisplayName();
+            email = acct.getEmail();
+        }
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             name = user.getDisplayName();

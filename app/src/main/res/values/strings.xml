@@ -47,4 +47,5 @@
     <string name="about_us_text">About Us</string>
     <string name="logout_text">Logout</string>
     <string name="ingredients">Ingredients</string>
+    <string name="start_cooking_text">Start!</string>
 </resources>
